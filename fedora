@@ -5,8 +5,6 @@ echo "This is an install package installation menu"
 echo ""
 
 
-
-
 # This are functions for fedora operating system
 shells()
 {
@@ -226,3 +224,36 @@ office()
 {
     dnf install pdfarranger -yy
 }
+
+
+supergroup()
+{
+    dnf install 
+    dnf groupinstall @engineering-and-scientific
+    dnf groupinstall @robotics-suite
+    dnf groupinstall @virtualization
+    dnf groupinstall @python-science
+    dnf groupinstall @electronic-lab
+    dnf groupinstall @neuron-modelling-simulators
+    dnf groupinstall @fonts
+    dnf groupinstall @sound-and-video
+    dnf groupinstall @office
+    dnf groupinstall @milkymist
+    dnf groupinstall @system-tools
+
+    
+}
+
+echo "This are package install options"
+echo "A|a -> All packages"
+echo "B|b -> Groupinstall packages"
+echo "C|c -> "
+echo ""
+OPT=$1
+
+case $OPT in
+    |a)
+        auto_fedupdate
+        ;;
+    b)
+        
