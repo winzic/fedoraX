@@ -252,8 +252,9 @@ echo ""
 OPT=$1
 
 case $OPT in
-    |a)
+    A|a)
         auto_fedupdate
         ;;
-    b)
+    B|b)
+        
         
