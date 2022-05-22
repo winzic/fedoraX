@@ -10,6 +10,7 @@ shells()
 {
     dnf install fish* -yy
     dnf install tcsh* -yy
+    dnf install dash* -yy
     
 }
 
