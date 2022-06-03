@@ -202,7 +202,7 @@ vbox_vlc()
     # VirtualBox 
     wget -q https://www.virtualbox.org/download/oracle_vbox.asc
     rpm --import oracle_vbox.asc
-    dnf install VirtualBox* -yy
+    dnf install VirtualBox -yy
     # VLC Media player 
     dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -yy
     dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -yy
@@ -227,6 +227,16 @@ office()
     dnf install pdfarranger -yy
     dnf install libreoffice* -yy
 }
+
+qemu_gui()
+{
+    dnf -y install bridge-utils libvirt virt-install qemu-kvm
+    dnf install libvirt-devel virt-top libguestfs-tools guestfs-tools
+    systemctl start libvirtd
+    systemctl enable libvirtd
+    
+}
+
 
 shells
 sncte_packages
